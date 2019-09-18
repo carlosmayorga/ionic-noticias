@@ -4,7 +4,10 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    /* Otra forma de declarar lazyloading
+    loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
+    */
+    loadChildren: './pages/tabs/tabs.module#TabsPageModule'
   }
 ];
 @NgModule({
